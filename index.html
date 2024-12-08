@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Shop</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ff5e62;
+            animation: changeBackground 10s infinite alternate;
+            color: #4a4a4a;
+            overflow-x: hidden;
+        }
+        @keyframes changeBackground {
+            0% { background-color: #ff5e62; }
+            25% { background-color: #ffb447; }
+            50% { background-color: #ff9a8f; }
+            75% { background-color: #ffcd61; }
+            100% { background-color: #fbe8a6; }
+        }
+        header {
+            background: linear-gradient(135deg, #ff5e62, #ffb447);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInHeader 1.5s ease-in-out;
+        }
+        @keyframes fadeInHeader {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        header .logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 3px;
+            font-family: 'Cursive', sans-serif;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+        nav ul li a:hover {
+            color: #fff;
+            transform: translateY(-5px);
+        }
+        .hero {
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+            animation: fadeInHero 1.5s ease-in-out;
+        }
+        @keyframes fadeInHero {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .hero h1 {
+            font-size: 60px;
+            margin: 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            font-family: 'Cursive', sans-serif;
+        }
+        .hero p {
+            font-size: 24px;
+            margin-top: 10px;
+            font-weight: 300;
+            font-family: 'Arial', sans-serif;
+        }
+        .btn {
+            background: #ff5e62;
+            color: white;
+            padding: 18px 50px;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 20px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .btn:hover {
+            background: #ff3d2e;
+            transform: scale(1.1);
+        }
+        section {
+            padding: 70px 20px;
+            text-align: center;
+            animation: fadeInSection 1.5s ease-in-out;
+        }
+        @keyframes fadeInSection {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h2 {
+            color: #ff5e62;
+            font-size: 36px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .product {
+            display: inline-block;
+            width: 28%;
+            text-align: center;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+        .product h3 {
+            color: #ff5e62;
+            margin: 15px 0;
+            font-size: 24px;
+        }
+        .product p {
+            color: #555;
+            font-size: 18px;
+        }
+        footer {
+            background: #d07850;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+        form {
+            max-width: 650px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            animation: fadeInForm 2s ease-in-out;
+        }
+        @keyframes fadeInForm {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        form label {
+            margin: 12px 0 6px;
+            font-size: 20px;
+            color: #d07850;
+        }
+        form input, form textarea {
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        form button {
+            background: #ff5e62;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background 0.3s;
+        }
+        form button:hover {
+            background: #ff3d2e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Bakery Delight</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="hero">
+        <h1>Welcome to Bakery Delight</h1>
+        <p>Freshly baked goods made with love</p>
+        <a href="#products" class="btn">Shop Now</a>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Bakery Delight, we believe in the magic of fresh, handcrafted baked goods. From delicious breads to mouth-watering pastries, everything is made with the finest ingredients and a lot of love. We take pride in our recipes that have been passed down through generations, and we aim to bring the warmth of home baking into your life. Whether you're looking for a quick breakfast or a special treat, we have something for everyone.</p>
+    </section>
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="product">
+            <div class="product-image" style="background-color: #f7bc0c; height: 250px; display: flex; justify-content: center; align-items: center; font-size: 30px; color: white;">Fresh Bread</div>
+            <h3>Fresh Bread</h3>
+            <p>Soft, warm, and perfect for any meal.</p>
+        </div>
+        <div class="product">
+            <div class="product-image" style="background-color: #ff9a8f; height: 250px; display: flex; justify-content: center; align-items: center; font-size: 30px; color: white;">Delicious Cakes</div>
+            <h3>Delicious Cakes</h3>
+            <p>Handcrafted cakes for every occasion.</p>
+        </div>
+        <div class="product">
+            <div class="product-image" style="background-color: #ffcd61; height: 250px; display: flex; justify-content: center; align-items: center; font-size: 30px; color: white;">Assorted Pastries</div>
+            <h3>Assorted Pastries</h3>
+            <p>Flaky, buttery, and simply irresistible.</p>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="#">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>   
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>   
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Bakery Delight | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
